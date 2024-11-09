@@ -1,6 +1,7 @@
 # Blog Webapp
 A fullstack express app, where user can register with username, email and password, and add, edit delete their blogs and other user can comment on it. Hashing is used to store users password in database.
 
+
 ## Tech Stack
 - `Node.js` : Javascript runtime for building the app server.
 - `Express.js` : Web framework for building RESTFul APIs.
@@ -8,6 +9,7 @@ A fullstack express app, where user can register with username, email and passwo
 - `EJS` : Templating engine for rendering dynamic HTML views.
 - `bcrypt` : Hashing and securing user password.
 - `CSS` : Styling the application frontend.
+  
 
 ## Features
 - Authentication : User can register, login, logout.
@@ -15,11 +17,12 @@ A fullstack express app, where user can register with username, email and passwo
 - Hashing : Passwords are hashed before storing in database.
 - Dynamic views : Views are rendered dynamically using EJS templates.
 - Responsive design : Basic frontend layout styled with css.
+  
 
 ## Installation
 1. Clone the repository to your local machine:
    ```bash
-      git clone
+      git clone https://github.com/KajalMogal/blog-webapp.git
    ```
 
 2. Install dependencies using npm:
@@ -31,6 +34,9 @@ A fullstack express app, where user can register with username, email and passwo
    ```bash
       MONGODB_URI=mongodb://localhost:27017/app
       SECRET_KEY=secret-key
+      CLOUDINARY_CLOUD_NAME=cloud-name
+      CLOUDINARY_KEY=cloudinary-key
+      CLOUDINARY_SECRET=cloudinary-secret
    ```
 
 4. Start the app:
