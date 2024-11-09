@@ -2,6 +2,7 @@
 A fullstack express app, where user can register with username, email and password, and add, edit delete their blogs and other user can comment on it. Hashing is used to store users password in database.
 
 
+
 ## Tech Stack
 - `Node.js` : Javascript runtime for building the app server.
 - `Express.js` : Web framework for building RESTFul APIs.
@@ -10,6 +11,7 @@ A fullstack express app, where user can register with username, email and passwo
 - `bcrypt` : Hashing and securing user password.
 - `CSS` : Styling the application frontend.
   
+  
 
 ## Features
 - Authentication : User can register, login, logout.
@@ -17,6 +19,7 @@ A fullstack express app, where user can register with username, email and passwo
 - Hashing : Passwords are hashed before storing in database.
 - Dynamic views : Views are rendered dynamically using EJS templates.
 - Responsive design : Basic frontend layout styled with css.
+
   
 
 ## Installation
