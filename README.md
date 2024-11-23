@@ -1,4 +1,7 @@
 # Blog Webapp
+
+![blog](https://github.com/user-attachments/assets/d3556c0e-a2f8-4a61-804e-91799ab524c9)
+
 A fullstack express app, where user can register with username, email and password, and add, edit delete their blogs and other user can comment on it. Hashing is used to store users password in database.
 
 
