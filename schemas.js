@@ -1,8 +1,8 @@
 const Joi = require('joi');
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
-module.exports.postSchema = Joi.object({
-    post: Joi.object({
+module.exports.paintingSchema = Joi.object({
+    painting: Joi.object({
         title: Joi.string().required(),
         description: Joi.string().required()
     }).required(),

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router({ mergeParams: true });
 const comments = require('../controllers/comments.js');
 const { validateComment, isLoggedIn, isCommentAuthor } = require('../middleware.js');
-const Post = require('../models/post.js');
+const Painting = require('../models/painting.js');
 const Comment = require('../models/comment.js');
 
 const { commentSchema } = require('../schemas.js');

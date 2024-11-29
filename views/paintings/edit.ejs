@@ -1,16 +1,16 @@
 <% layout('./layouts/boilerplate') %>
 <link rel="stylesheet" href="/stylesheets/edit.css">
 <div class="back-btn">
-    <a href="/posts/<%=post._id%>"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+    <a href="/paintings/<%=painting._id%>"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
       </svg></a>
 </div>
-    <form action="/posts/<%=post._id%>?_method=PUT" method="POST" novalidate class="needs-validation" enctype="multipart/form-data">
+    <form action="/paintings/<%=painting._id%>?_method=PUT" method="POST" novalidate class="needs-validation" enctype="multipart/form-data">
        <div class="row">
         <div class="col-6 offset-3">
             <div class="mb-3">
-                <label class="form-label" for="title">Title</label>
-                <input class="form-control" type="text" id="title" value="<%=post.title%>" name="post[title]" required>
+                <label class="form-label" for="title">Painting Name</label>
+                <input class="form-control" type="text" id="title" value="<%=painting.title%>" name="painting[title]" required>
                 <div class="valid-feedback">
                      good!
                   </div>
@@ -26,15 +26,15 @@
         
             <div class="mb-3">
                 <label class="form-label" for="description">Description</label>
-                <textarea class="form-control" type="text" id="description" name="post[description]"
-                    required><%= post.description%></textarea>
+                <textarea class="form-control" type="text" id="description" name="painting[description]"
+                    required><%= painting.description%></textarea>
                 <div class="valid-feedback">
                     good!
                 </div>
             </div>
     
             <div class="mb-3">
-                <% post.images.forEach(function(img, i) { %>
+                <% painting.images.forEach(function(img, i) { %>
                     <img src="<%=img.thumbnail%>" class="img-thumbnail" alt="">
                     <div class="form-check-inline">
                         <input type="checkbox" id="image-<%=i%>" name="deleteImages[]" value="<%=img.filename%>">
@@ -56,10 +56,8 @@
         (() => {
 'use strict'
 
-// Fetch all the forms we want to apply custom Bootstrap validation styles to
 const forms = document.querySelectorAll('.needs-validation')
 
-// Loop over them and prevent submission
 Array.from(forms).forEach(form => {
 form.addEventListener('submit', event => {
 if (!form.checkValidity()) {

@@ -6,24 +6,29 @@
     font-size: 1rem;
 }
 
-body {
+ body {
     height: 100vh;
-    background-image: linear-gradient( rgba(216, 220, 96, 0.5), rgba(216, 220, 96, 0.5)),
-    url("https://images.unsplash.com/photo-1472289065668-ce650ac443d2?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-    background-size: cover;
-    background-position: center;
-}
-.cover-container {
+    background-color: #ec008c;
+background-image: linear-gradient(43deg, #ec008c 0%, #fc6767 46%, #FFCC70 100%);
+
+ }
+/* .cover-container {
     max-width: vw;
-}
+} */
 
 .nav-link {
+    border: 2px transparent white;
+    /* border-radius: 1rem; */
     color: rgb(9, 9, 9);
     font-weight: 500;
     font-size:1.5rem;
     margin-left: 1rem;
-    padding: 1rem;
 }
+
+.nav-link:hover {
+    color: rgb(45, 44, 44);
+}
+
 h1 {
     font-weight: 700;
 }
@@ -32,28 +37,42 @@ p {
     font-weight: 500;
     font-size:1.5rem;
 }
-.nav-link:hover {
-    color:  rgb(83, 82, 82);
-}
+
 svg {
     color: rgb(9, 9, 9);
     height: 3rem; 
     width: 3rem;
 }
+
 .nav-link.active {
     color: rgb(9, 9, 9);
-    border-bottom-color:white;
+    border-bottom: 2px solid rgb(249, 246, 246);
 
 }
 
 .btn-secondary {
     color: rgb(9, 9, 9);
 }
-.btn-secondary:hover {
-    color: rgb(55, 54, 54);
+
+main .btn {
+    background-color: #FFCC70;
+    padding-inline: 3rem;
 }
 
+main .btn:hover {
+    background-color: #f8cc7c;
+    color: black;
+}
 
+main h1 {
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    font-size:4rem;
+}
+
+main p {
+    font-size: 3rem;
+}
 
 .cover-container img {
     height: 50px;

@@ -17,7 +17,7 @@ if (process.env.NODE_ENV !== "production") {
   const User = require('./models/user');
   const mongoSanitize = require('express-mongo-sanitize');
   const userRoutes = require('./routes/users');
-  const posts = require('./routes/posts');
+  const paintings = require('./routes/paintings');
   const comment = require('./routes/comments');
  const store = require('./sessionStore');
   
@@ -97,8 +97,8 @@ if (process.env.NODE_ENV !== "production") {
   
   // Use routes
   app.use('/', userRoutes);
-  app.use('/posts', posts);
-  app.use('/posts/:id/comments', comment);
+  app.use('/paintings', paintings);
+  app.use('/paintings/:id/comments', comment);
   
   // Home route
   app.get('/', (req, res) => {

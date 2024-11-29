@@ -5,29 +5,46 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
 }
-.navbar {
-    background-color: rgb(1, 25, 48);
-}
+
 svg {
-    color: white;
-    height: 2rem; 
-    width: 2rem;
+    color: rgb(9, 9, 9);
+    height: 3rem; 
+    width: 3rem;
 }
 
+button .navbar-toggler .navbar-toggler-icon{
+    fill: white;
+}
 
-.custom-navlink {
-    background-color: rgb(122, 129, 151);
-    height: 2.5rem;
-    width: 5rem;
+.nav-link{ 
+    border: 2px transparent white;
+    color: rgb(11, 11, 11);
+    margin-left: 2rem;
+    padding: 2px;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.nav-link.active {
+    color: rgb(9, 9, 9);
+    border-bottom: 2px solid rgb(249, 246, 246);
+
+}
+
+/* .custom-navlink {
+    border: 1px solid black;
     text-align: center;
+} */
+
+.custom-nav-link {
+    border: 1px solid black;
     border-radius: 1rem;
-}
-.nav-link {
-    color: white;
-    font-size: 1rem;
+    padding-left: 2rem;
+    text-align: center;
 }
 
 .nav-link:hover {
-    color: white;
-    font-size: 1rem;
+    color: rgb(53, 53, 51);
+    font-size: 1.5rem;
+    font-weight: 500;
 }

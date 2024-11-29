@@ -8,7 +8,7 @@ const ImageSchema = new Schema({
 ImageSchema.virtual('thumbnail').get(function(){
     return this.url.replace('/upload', '/upload/w_300');
 });
-    const PostSchema = new Schema({
+    const PaintingSchema = new Schema({
         title: String,
         author: {
             type: Schema.Types.ObjectId,
@@ -25,7 +25,7 @@ ImageSchema.virtual('thumbnail').get(function(){
         ]
     });
     
-PostSchema.post('findOneAndDelete', async function (doc) {
+ PaintingSchema.post('findOneAndDelete', async function (doc) {
     if (doc) {
         await Comment.deleteMany({
             _id: {
@@ -35,5 +35,5 @@ PostSchema.post('findOneAndDelete', async function (doc) {
     }
 });
 
-module.exports = mongoose.model('Post', PostSchema);
+module.exports = mongoose.model('Painting', PaintingSchema);
 

@@ -1,7 +1,7 @@
 <% layout('layouts/boilerplate') %>
 <link rel="stylesheet" href="/stylesheets/show.css">
 <div class="back-btn">
-    <a href="/posts"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+    <a href="/paintings"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
       </svg></a>
 </div>
@@ -10,14 +10,14 @@
         <div class="card mb-3"> 
           <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-              <% post.images.forEach((img, i) => { %>
+              <% painting.images.forEach((img, i) => { %>
                 <div class="carousel-item <%= i === 0 ? 'active' : '' %>">
-                  <img src="<%= img.url %>" class="d-block w-100" alt="image is here">
+                  <img src="<%= img.url %>" class="d-block w-100" alt="">
                 </div>
               <% }) %>
               </div>
   
-              <% if(post.images.length > 1) { %>
+              <% if(painting.images.length > 1) { %>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Previous</span>
@@ -30,22 +30,22 @@
               </div>   
               
                 <div class="card-body">
-                  <h5 class="card-title"><%= post.title %></h5>
-              <p class="card-text"><%= post.description %></p>
-              <% if(currentUser && post.author.equals(currentUser._id)) { %>
+                  <h5 class="card-title"><%= painting.title %></h5>
+              <p class="card-text"><%= painting.description %></p>
+              <% if(currentUser && painting.author.equals(currentUser._id)) { %>
               <div class="card-body">
-                <a class="card-link btn" href="/posts/<%=post._id%>/edit"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                <a class="card-link btn" href="/paintings/<%=painting._id%>/edit"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                     <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                     <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
                   </svg></a>
-                <form class="d-inline" action="/posts/<%=post._id%>?_method=DELETE" method="POST">
+                <form class="d-inline" action="/paintings/<%=painting._id%>?_method=DELETE" method="POST">
                     <button class="btn"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                         <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5"/>
                       </svg></button>
                 </form>
             </div>
             <% } %>
-            <p class="author">- <%= post.author.username %></p> 
+            <p class="author">- <%= painting.author.username %></p> 
             </div>
           </div>
        </div>
@@ -55,7 +55,7 @@
     <h2><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-text-fill" viewBox="0 0 16 16">
         <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
       </svg></h2>
-   <form action="/posts/<%=post._id%>/comments" method="POST" novalidate class="mb-3 needs-validation">
+   <form action="/paintings/<%=painting._id%>/comments" method="POST" novalidate class="mb-3 needs-validation">
         
 
         <div class="mb-3">
@@ -77,13 +77,13 @@
    
 
    
-    <% for(let comment of post.comments) { %>
+    <% for(let comment of painting.comments) { %>
         <div class="custom-comment mb-2">
         <div class="mb-3">
             <p class="card-text"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots-fill" viewBox="0 0 16 16">
                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793zm5 4a1 1 0 1 0-2 0 1 1 0 0 0 2 0m4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
               </svg>  <%= comment.body %></p> 
-            <form action="/posts/<%= post._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+            <form action="/paintings/<%= painting._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
                 <% if (currentUser && comment.author && String(comment.author._id) === String(currentUser._id)) { %>
                     <button class="btn btn-sm "> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                         <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5"/>
@@ -103,10 +103,8 @@
     (() => {
 'use strict'
 
-// Fetch all the forms we want to apply custom Bootstrap validation styles to
 const forms = document.querySelectorAll('.needs-validation')
 
-// Loop over them and prevent submission
 Array.from(forms).forEach(form => {
 form.addEventListener('submit', event => {
 if (!form.checkValidity()) {

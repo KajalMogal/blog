@@ -18,7 +18,7 @@ module.exports.register = async (req, res, next) => {
         req.session.user_id = user._id;
         console.log(user);
         req.flash('success', 'Welcome!');
-        res.redirect('/posts');
+        res.redirect('/paintings');
     } catch (e) {
         req.flash('error', e.message);
         res.redirect('register');
@@ -31,7 +31,7 @@ module.exports.loginForm = (req, res) => {
 
 module.exports.login = async (req, res) => {
     req.flash('success', 'Welcome Back !');
-    const redirectUrl = req.session.returnTo || '/posts';
+    const redirectUrl = req.session.returnTo || '/paintings';
     delete req.session.returnTo;
     res.redirect(redirectUrl);
 }
@@ -42,6 +42,6 @@ module.exports.logout = (req, res) => {
             console.log(err);
         }
         req.flash('success', 'You have successfully logged out.');
-        return res.redirect('/posts');
+        return res.redirect('/paintings');
     });
 }
