@@ -1,29 +1,12 @@
 # Blog Webapp
 
-
-A fullstack express app, where user can register with username, email and password, and add, edit delete their blogs and other user can comment on it. Hashing is used to store users password in database.
-
+A fullstack express app, where user can register with username, email and password, and add, edit delete their blogs. Bcrypt is used for password hashing. 
 
 
 ## Tech Stack
-- `Node.js` : Javascript runtime for building the app server.
-- `Express.js` : Web framework for building RESTFul APIs.
-- `MongoDB` : Database to store user data.
-- `EJS` : Templating engine for rendering dynamic HTML views.
-- `bcrypt` : Hashing and securing user password.
-- `CSS` : Styling the application frontend.
+`EJS`, `CSS`, `Bootstrap`, `Node.js`, `Express.js`, `MongoDB` 
   
   
-
-## Features
-- Authentication : User can register, login, logout.
-- CRUD Operations : User can create, read, update and delete blog.
-- Hashing : Passwords are hashed before storing in database.
-- Dynamic views : Views are rendered dynamically using EJS templates.
-- Responsive design : Basic frontend layout styled with css.
-
-  
-
 ## Installation
 1. Clone the repository to your local machine:
    ```bash
